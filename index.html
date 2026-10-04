@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GiftCard Maker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">🎁 DIGITAL GIFT CARDS</p>
+        <h1>Create a beautiful gift card</h1>
+        <p class="subtitle">Personalize it, preview it, then download or share it.</p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <form id="giftForm" class="panel">
+        <h2>Gift card details</h2>
+
+        <label>Recipient's name
+          <input id="recipient" maxlength="40" placeholder="e.g. Sarah" required>
+        </label>
+
+        <label>From
+          <input id="sender" maxlength="40" placeholder="e.g. Daniel" required>
+        </label>
+
+        <label>Gift amount
+          <input id="amount" type="number" min="0" step="1" placeholder="e.g. 10000">
+        </label>
+
+        <label>Message
+          <textarea id="message" maxlength="180" placeholder="Write a special message..."></textarea>
+        </label>
+
+        <label>Card style
+          <select id="theme">
+            <option value="sunset">Sunset</option>
+            <option value="ocean">Ocean</option>
+            <option value="forest">Forest</option>
+            <option value="royal">Royal</option>
+          </select>
+        </label>
+
+        <div class="actions">
+          <button type="button" id="downloadBtn">⬇ Download card</button>
+          <button type="button" id="shareBtn" class="secondary">🔗 Share card</button>
+        </div>
+        <p id="status" class="status"></p>
+      </form>
+
+      <section class="preview-panel">
+        <h2>Preview</h2>
+        <div id="card" class="gift-card sunset">
+          <div class="card-top">
+            <span>GIFT CARD</span>
+            <span>🎁</span>
+          </div>
+          <div class="card-body">
+            <p class="small">FOR</p>
+            <h3 id="previewRecipient">Your recipient</h3>
+            <p id="previewMessage">Your special message will appear here.</p>
+            <div id="previewAmount" class="amount">Gift</div>
+          </div>
+          <div class="card-bottom">
+            <span>WITH LOVE</span>
+            <span id="previewSender">From you</span>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
